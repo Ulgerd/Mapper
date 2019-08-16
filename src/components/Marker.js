@@ -11,9 +11,9 @@ function Marker(props) {
       options={{
         draggable: true
       }}
+      onDragEnd= {(e) => props.onDragEnd(e.originalEvent.target.geometry, props.dotIndex)}
       properties={{
-        hintContent: "1 Собственный значок метки",
-        id: "123"
+        hintContent: props.name,
       }}
     >
     </Placemark>

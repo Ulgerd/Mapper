@@ -11,7 +11,7 @@ function ListStr(props) {
          {...provided.dragHandleProps}
       >
         <span>{props.name}</span>
-        <button onClick = {() => {props.onDotRemove(props.dotPos)}}></button>
+        <button onClick = {() => {props.onDotRemove(props.index)}}></button>
       </li>
     )}
 </Draggable>

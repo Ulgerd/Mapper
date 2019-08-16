@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import { setNewDot } from '../actions/rootActions.js'
-import { request } from './request.js'
+import { strToCoordsReq } from './request.js'
 import { formatDotData } from './formatDotData.js'
 
 const onEnter = async (e, location, setInputVal, setNewDot) => {
   if (e.key === 'Enter' && location !== '') {
     setInputVal('')
-    let locData = await request(location);
+    let locData = await strToCoordsReq(location);
     if (locData.data
         .response
         .GeoObjectCollection

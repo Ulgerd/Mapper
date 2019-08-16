@@ -1,14 +1,26 @@
 import React from 'react';
-import { YMaps, Placemark, Map } from 'react-yandex-maps';
+import { YMaps, Map } from 'react-yandex-maps';
 import { connect } from 'react-redux';
-import { removeDot, rearrangeDots } from '../actions/rootActions.js'
+import { rearrangeDots, updateDotData } from '../actions/rootActions.js'
 import Marker from './Marker.js';
+import MapLine from './MapLine.js';
+import { coordsToStrReq } from './request.js'
 
 function Mapper(props) {
   let center = props.dots.length > 0 ?
                 props.dots[props.dots.length-1].coords :
                 [55.75, 37.57];
   let mapState = { center: center, zoom: 9 };
+
+  const onDragEnd = async (e, index) => {
+    let coords = [...e.getCoordinates()];
+    let address = await coordsToStrReq(e.getCoordinates())
+    props.updateDotData(index, coords, address)
+  }
+
+  let lineCoords = props.dots.map((dot) => {
+    return dot.coords;
+  })
 
   return (
     <YMaps>
@@ -19,10 +31,13 @@ function Mapper(props) {
           {props.dots.map((dotObj,i) => {
             return <Marker
                     key={i}
+                    dotIndex = {i}
                     coords={dotObj.coords}
                     name={dotObj.name}
+                    onDragEnd={onDragEnd}
               />
           })}
+          <MapLine coords={lineCoords} />
         </Map>
       </div>
     </YMaps>
@@ -37,8 +52,8 @@ const mapStateToProps = store => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  removeDot: (dotPos) => {dispatch(removeDot(dotPos))},
-  rearrangeDots: (dotsArr) => {dispatch(rearrangeDots(dotsArr))}
+  rearrangeDots: (dotsArr) => {dispatch(rearrangeDots(dotsArr))},
+  updateDotData: (dotIndex, coords, address) => {dispatch(updateDotData(dotIndex, coords, address))}
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Mapper);

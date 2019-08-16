@@ -22,6 +22,12 @@ export function rootReducer(state = initialState, action) {
         draft.dots = action.dotsArr;
       })
 
+    case 'UPDATE_DOT_DATA':
+      return produce(state, draft => {
+        draft.dots[action.dotIndex].name = action.address;
+        draft.dots[action.dotIndex].coords = action.coords;
+      })
+
     default:
       return state
   }
