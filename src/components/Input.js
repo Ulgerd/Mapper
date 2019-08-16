@@ -8,8 +8,16 @@ const onEnter = async (e, location, setInputVal, setNewDot) => {
   if (e.key === 'Enter' && location !== '') {
     setInputVal('')
     let locData = await request(location);
-    if (locData.data.response.GeoObjectCollection.featureMember.length > 0) {
-      let formData = formatDotData(locData.data.response.GeoObjectCollection.featureMember[0].GeoObject)
+    if (locData.data
+        .response
+        .GeoObjectCollection
+        .featureMember.length > 0) {
+      let formData = formatDotData(locData
+                                  .data
+                                  .response
+                                  .GeoObjectCollection
+                                  .featureMember[0]
+                                  .GeoObject);
       setNewDot(formData)
     } else {
       alert("По вашему запросу ничего не найдено")

@@ -1,6 +1,15 @@
+import nanoid from 'nanoid';
+
+const strToArr = (str) => {
+  let arr = str.split(' ').reverse();
+  return arr.map((elem) => {
+    return +elem;
+  })
+}
+
 export const formatDotData = (geoObject) => {
-  console.log(geoObject);
-  let point = geoObject.Point;
+  let id = nanoid(4);
+  let point = strToArr(geoObject.Point.pos);
   let address = geoObject.metaDataProperty.GeocoderMetaData.Address.formatted;
-  return {name: address, coords: point};
+  return {id: id, name: address, coords: point};
 };
