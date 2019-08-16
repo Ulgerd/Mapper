@@ -1,19 +1,19 @@
 import React from 'react';
-import { YMaps, Placemark, Map } from 'react-yandex-maps';
-import { connect } from 'react-redux';
-import { removeDot, rearrangeDots } from '../actions/rootActions.js'
+import { Placemark } from 'react-yandex-maps';
 
 function Marker(props) {
   return (
     <Placemark
       geometry={props.coords}
-      modules={["geoObject.addon.hint"]}
+      modules={["geoObject.addon.balloon"]}
       options={{
         draggable: true
       }}
-      onDragEnd= {(e) => props.onDragEnd(e.originalEvent.target.geometry, props.dotIndex)}
+      onDragEnd= {(e) => props.onDragEnd(e.originalEvent.target.geometry,
+                                         props.dotIndex)}
       properties={{
-        hintContent: props.name,
+        balloonContentHeader: `Точка №${props.dotIndex+1}`,
+        balloonContent: props.name
       }}
     >
     </Placemark>

@@ -4,15 +4,16 @@ import { connect } from 'react-redux';
 import { rearrangeDots, updateDotData } from '../actions/rootActions.js'
 import Marker from './Marker.js';
 import MapLine from './MapLine.js';
-import { coordsToStrReq } from './request.js'
+import { coordsToStrReq } from '../utils/request.js'
 
 function Mapper(props) {
   let center = props.dots.length > 0 ?
                 props.dots[props.dots.length-1].coords :
                 [55.75, 37.57];
+
   let mapState = { center: center, zoom: 9 };
 
-  const onDragEnd = async (e, index) => {
+  let onDragEnd = async (e, index) => {
     let coords = [...e.getCoordinates()];
     let address = await coordsToStrReq(e.getCoordinates())
     props.updateDotData(index, coords, address)
@@ -24,8 +25,9 @@ function Mapper(props) {
 
   return (
     <YMaps>
-      <div>
         <Map
+          width={'40em'}
+          height={'40em'}
           state={mapState}
         >
           {props.dots.map((dotObj,i) => {
@@ -39,7 +41,6 @@ function Mapper(props) {
           })}
           <MapLine coords={lineCoords} />
         </Map>
-      </div>
     </YMaps>
   );
 }

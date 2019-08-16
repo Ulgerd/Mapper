@@ -3,6 +3,16 @@ import { connect } from 'react-redux';
 import ListStr from './ListStr.js';
 import { removeDot, rearrangeDots } from '../actions/rootActions.js'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
+import styled from 'styled-components'
+
+const StyledUl = styled.ul`
+   list-style-type: none;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   margin-left: 0;
+   padding-left: 0;
+`
 
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
@@ -31,7 +41,7 @@ function List(props) {
     <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="droppable">
         {(provided, snapshot) => (
-         <ul
+         <StyledUl
            {...provided.droppableProps}
            ref={provided.innerRef}
          >
@@ -44,7 +54,7 @@ function List(props) {
                         onDotRemove={props.removeDot}
                       />
             })}
-          </ul>
+          </StyledUl>
         )}
         </Droppable>
       </DragDropContext>

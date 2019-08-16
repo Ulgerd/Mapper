@@ -10,6 +10,10 @@ const strToArr = (str) => {
 export const formatDotData = (geoObject) => {
   let id = nanoid(4);
   let point = strToArr(geoObject.Point.pos);
-  let address = geoObject.metaDataProperty.GeocoderMetaData.Address.formatted;
+  let address = geoObject.metaDataProperty
+                          .GeocoderMetaData
+                          .Address
+                          .formatted;
+
   return {id: id, name: address, coords: point};
 };

@@ -1,7 +1,7 @@
 import produce from "immer";
 
 export const initialState = {
-  dots: [], // [{}, {}]
+  dots: [], // [{id:'123', address:'...', coords:[]}, {}]
 }
 
 export function rootReducer(state = initialState, action) {

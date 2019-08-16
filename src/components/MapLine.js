@@ -6,7 +6,6 @@ function MapLine(props) {
     <Polyline
       geometry={props.coords}
       options={{
-        balloonCloseButton: false,
         strokeColor: "#000",
         strokeWidth: 4,
         strokeOpacity: 0.5
