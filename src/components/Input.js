@@ -8,7 +8,7 @@ import styled from 'styled-components'
 const StyledInput = styled.input`
   width: 100%;
 `
-const onEnter = async (e, location, setInputVal, setNewDot) => {
+export const onEnter = async (e, location, setInputVal, setNewDot) => {
   if (e.key === 'Enter' && location !== '') {
     setInputVal('')
     let locData = await strToCoordsReq(location);
@@ -21,7 +21,7 @@ const onEnter = async (e, location, setInputVal, setNewDot) => {
   }
 }
 
-function Input(props) {
+export function Input(props) {
   const [inputVal, setInputVal] = useState('');
   return (
       <div>

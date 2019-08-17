@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListStr component tests renders correctly 1`] = `
+<li
+  className="sc-bdVaJa jgKfnK"
+  style={Object {}}
+>
+  <span
+    className="sc-bwzfXH efgKzg"
+  >
+    5
+    . 
+    Moscow
+  </span>
+  <Icon
+    fill="black"
+    onClick={[Function]}
+    xlink="close"
+  />
+</li>
+`;

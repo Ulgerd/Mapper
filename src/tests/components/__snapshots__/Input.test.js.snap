@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component tests renders correctly 1`] = `
+<div>
+  <input
+    className="sc-bdVaJa UoSJW"
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    value=""
+  />
+</div>
+`;

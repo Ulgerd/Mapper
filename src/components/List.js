@@ -21,7 +21,7 @@ const reorder = (list, startIndex, endIndex) => {
   return result;
 };
 
-function List(props) {
+export function List(props) {
   const onDragEnd =(result) => {
     // dropped outside the list
     if (!result.destination) {

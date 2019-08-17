@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component tests renders correctly 1`] = `
+<h1
+  className="sc-bdVaJa hDuIHb"
+>
+  Mapper
+</h1>
+`;

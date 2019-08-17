@@ -9,7 +9,7 @@ const StyledHeader = styled.h1`
   background-color: lightgray;
 `
 
-function Header() {
+export function Header() {
   return (
     <StyledHeader>
       Mapper

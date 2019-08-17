@@ -18,7 +18,7 @@ const StyledNav = styled.div`
   justify-content: flex-start;
 `
 
-function App() {
+export function App() {
   return (
     <div>
       <Header/>

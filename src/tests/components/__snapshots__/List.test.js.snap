@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List component tests renders correctly 1`] = `
+<ul
+  className="sc-bdVaJa itWsyt"
+>
+  <ListStr
+    id={123}
+    index={0}
+    name="Moscow"
+  />
+  <ListStr
+    id={321}
+    index={1}
+    name="Istanbul"
+  />
+</ul>
+`;

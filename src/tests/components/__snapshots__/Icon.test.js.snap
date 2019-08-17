@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon component tests renders correctly 1`] = `
+<svg
+  className="sc-bdVaJa eUzTN"
+  height="1.5em"
+  width="1.5em"
+>
+  <use
+    xlinkHref="icons.svg#undefined"
+  />
+</svg>
+`;

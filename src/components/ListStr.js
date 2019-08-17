@@ -1,22 +1,21 @@
 import React from 'react';
+import Icon from './Icon.js';
 import { Draggable } from "react-beautiful-dnd";
 import styled from 'styled-components'
 
 const StyledLi = styled.li`
    display: flex;
-   justify-content: space-between;
    align-items: center;
    margin-bottom: 0.5em;
 `
 
-const StyledButton = styled.button`
-  width: 2em;
-  height: 2em;
-  border-radius:1em;
-  justify-self: center;
+const StyledSpan = styled.span`
+  width: 90%;
+  text-align: justify;
+  padding-right: 1em;
 `
 
-function ListStr(props) {
+export function ListStr(props) {
   return (
     <Draggable
       key={props.id}
@@ -29,9 +28,12 @@ function ListStr(props) {
            {...provided.draggableProps}
            {...provided.dragHandleProps}
         >
-          <span>{props.index+1}. {props.name}</span>
-          <StyledButton onClick = {() => {props.onDotRemove(props.index)}}>X
-          </StyledButton>
+          <StyledSpan>{props.index+1}. {props.name}</StyledSpan>
+          <Icon
+            onClick = {() => {props.onDotRemove(props.index)}}
+            fill='black'
+            xlink='close'
+          />
         </StyledLi>
       )}
     </Draggable>

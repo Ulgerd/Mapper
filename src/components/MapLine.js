@@ -1,7 +1,7 @@
 import React from 'react';
 import { Polyline } from 'react-yandex-maps';
 
-function MapLine(props) {
+export function MapLine(props) {
   return (
     <Polyline
       geometry={props.coords}
