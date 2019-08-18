@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component tests renders correctly 1`] = `
+<div
+  className="sc-bdVaJa hgsmGs"
+>
+  <span>
+    Код можно посмотреть тут:
+    <a
+      href="https://github.com/Ulgerd/Mapper/tree/master/src"
+    >
+      GitHub Mapper
+    </a>
+  </span>
+  <span>
+    Первая часть квалификационного задания:
+    <a
+      href="https://resume.ulgerd.now.sh/FunBox_Level_1.pdf"
+    >
+      Level_I
+    </a>
+  </span>
+  <span>
+    Резюме:
+    <a
+      href="https://resume.ulgerd.now.sh/Pylaev_React_Jun.html"
+    >
+      Resume
+    </a>
+  </span>
+</div>
+`;

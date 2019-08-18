@@ -3,6 +3,7 @@ import Input from './Input.js';
 import List from './List.js';
 import Mapper from './Mapper.js';
 import Header from './Header.js';
+import Footer from './Footer.js';
 import styled from 'styled-components'
 
 const StyledApp = styled.div`
@@ -29,6 +30,7 @@ export function App() {
         </StyledNav>
         <Mapper />
       </StyledApp>
+      <Footer />
     </div>
   );
 }

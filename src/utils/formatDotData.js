@@ -1,6 +1,6 @@
 import nanoid from 'nanoid';
 
-const strToArr = (str) => {
+export const strToArr = (str) => {
   let arr = str.split(' ').reverse();
   return arr.map((elem) => {
     return +elem;
